@@ -6,9 +6,10 @@ import type Meta from '@girs/meta-15';
 
 import type { Button } from './panelMenu.js';
 import type { DateMenuButton } from './dateMenu.js';
+import type { PopupMenuManager } from './popupMenu.js';
 
 /**
- * @version 46
+ * @version 47
  */
 export class Panel extends St.Widget {
     statusArea: {
@@ -16,6 +17,8 @@ export class Panel extends St.Widget {
         dateMenu: DateMenuButton;
         quickSettings: any;
     };
+
+    menuManager: PopupMenuManager;
 
     boxOpacity: number;
 
