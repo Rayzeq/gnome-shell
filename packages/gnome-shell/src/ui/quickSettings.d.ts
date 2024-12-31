@@ -43,7 +43,7 @@ export class QuickSettingsItem extends St.Button {
  * @version 46
  */
 export namespace QuickToggle {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         title: string | null;
         subtitle: string | null;
         gicon: Gio.Icon;
@@ -85,7 +85,7 @@ export class QuickToggle extends QuickSettingsItem {
  * @version 46
  */
 export namespace QuickMenuToggle {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         title: string | null;
         subtitle: string | null;
         gicon: Gio.Icon;
@@ -124,7 +124,7 @@ export class QuickMenuToggle extends QuickSettingsItem {
  * @version 46
  */
 export namespace QuickSlider {
-    interface ConstructorProps extends St.Button.ConstructorProps {
+    interface ConstructorProps extends QuickSettingsItem.ConstructorProps {
         gicon: Gio.Icon;
         iconReactive: boolean;
         iconLabel: string;
