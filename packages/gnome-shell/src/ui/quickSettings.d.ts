@@ -61,10 +61,10 @@ export class QuickToggle extends QuickSettingsItem {
     subtitle: string | null;
     gicon: Gio.Icon;
 
-    private _box: St.BoxLayout;
-    private _icon: St.Icon;
-    private _title: St.Label;
-    private _subtitle: St.Label;
+    protected _box: St.BoxLayout;
+    protected _icon: St.Icon;
+    protected _title: St.Label;
+    protected _subtitle: St.Label;
 
     /**
      * Initializes a new instance of `QuickToggle`.
@@ -105,8 +105,8 @@ export class QuickMenuToggle extends QuickSettingsItem {
     gicon: Gio.Icon;
     menuEnabled: boolean;
 
-    private _box: St.BoxLayout;
-    private _menuButton: St.Button;
+    protected _box: St.BoxLayout;
+    protected _menuButton: St.Button;
 
     /**
      * Initializes a new instance of `QuickMenuToggle`.
@@ -145,9 +145,9 @@ export class QuickSlider extends QuickSettingsItem {
     menuEnabled: boolean;
     slider: Slider;
 
-    private _icon: St.Icon;
-    private _iconButton: St.Button;
-    private _menuButton: St.Button;
+    protected _icon: St.Icon;
+    protected _iconButton: St.Button;
+    protected _menuButton: St.Button;
 
     /**
      * Initializes a new instance of `QuickSlider`.
@@ -169,11 +169,11 @@ export class QuickSlider extends QuickSettingsItem {
 export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
     actor: St.Widget;
 
-    private _header: St.Widget;
-    private _headerIcon: St.Icon;
-    private _headerTitle: St.Label;
-    private _headerSubtitle: St.Label;
-    private _headerSpacer: Clutter.Actor;
+    protected _header: St.Widget;
+    protected _headerIcon: St.Icon;
+    protected _headerTitle: St.Label;
+    protected _headerSubtitle: St.Label;
+    protected _headerSpacer: Clutter.Actor;
 
     /**
      * Initializes a new instance of `QuickToggleMenu`.
@@ -193,9 +193,9 @@ export class QuickToggleMenu extends PopupMenu.PopupMenuBase {
     open(animate: boolean): void;
     close(animate: boolean): void;
 
-    private _syncChecked(): void;
+    protected _syncChecked(): void;
 
-    private _setOpenedSubMenu(submenu: PopupMenu.PopupSubMenu | null): void;
+    protected _setOpenedSubMenu(submenu: PopupMenu.PopupSubMenu | null): void;
 }
 
 /**
@@ -236,7 +236,7 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
     /**
      * Overlay actor passed to the constructor
      */
-    private _overlay: Clutter.Actor;
+    protected _overlay: Clutter.Actor;
 
     /**
      * Initializes a new instance of QuickSettingsLayout.
@@ -273,11 +273,11 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
      */
     vfunc_allocate(container: Clutter.Actor, box: Clutter.ActorBox): void;
 
-    private _containerStyleChanged(): void;
-    private _getColSpan(container: Clutter.Actor, child: Clutter.Actor): number;
-    private _getMaxChildWidth(container: Clutter.Actor): [number, number];
-    private _getRows(container: Clutter.Actor): Clutter.Actor[][];
-    private _getRowHeight(children: Clutter.Actor[]): [number, number];
+    protected _containerStyleChanged(): void;
+    protected _getColSpan(container: Clutter.Actor, child: Clutter.Actor): number;
+    protected _getMaxChildWidth(container: Clutter.Actor): [number, number];
+    protected _getRows(container: Clutter.Actor): Clutter.Actor[][];
+    protected _getRowHeight(children: Clutter.Actor[]): [number, number];
 }
 
 /**
@@ -287,10 +287,10 @@ export class QuickSettingsLayout extends Clutter.LayoutManager {
  * @version 46
  */
 export class QuickSettingsMenu extends PopupMenu.PopupMenu {
-    private _dimEffect: Clutter.BrightnessContrastEffect;
-    private _boxPointer: St.Widget;
-    private _grid: St.Widget;
-    private _overlay: Clutter.Actor;
+    protected _dimEffect: Clutter.BrightnessContrastEffect;
+    protected _boxPointer: St.Widget;
+    protected _grid: St.Widget;
+    protected _overlay: Clutter.Actor;
 
     /**
      * Initializes a new instance of QuickSettingsMenu.
@@ -315,8 +315,8 @@ export class QuickSettingsMenu extends PopupMenu.PopupMenu {
     open(animate: boolean): void;
     close(animate: boolean): void;
 
-    private _completeAddItem(item: Clutter.Actor, colSpan: number): void;
-    private _setDimmed(dim: boolean): void;
+    protected _completeAddItem(item: Clutter.Actor, colSpan: number): void;
+    protected _setDimmed(dim: boolean): void;
 }
 
 /**
