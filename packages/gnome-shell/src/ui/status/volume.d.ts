@@ -78,7 +78,7 @@ export declare class StreamSlider extends QuickSlider {
  * OutputStreamSlider class for controlling output audio stream.
  */
 export declare class OutputStreamSlider extends StreamSlider {
-    // Implementation-specific methods and properties
+    protected _findHeadphones(sink: Gvc.MixerStream): boolean;
 }
 
 /**
