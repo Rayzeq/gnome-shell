@@ -43,6 +43,11 @@ export declare class StreamSlider extends QuickSlider {
     set stream(stream: Gvc.MixerStream);
 
     /**
+     * Gets the name of the icon matching the current stream volume.
+     */
+    public getIcon(): string | null;
+
+    /**
      * Connects the stream for updates.
      * @param stream The Gvc.MixerStream object.
      */
