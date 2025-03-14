@@ -198,6 +198,7 @@ export class PopupImageMenuItem extends PopupBaseMenuItem {
     override _init(config?: PopupImageMenuItem.ConstructorProps): void;
     override _init(text: string, icon: Gio.Icon | string, params?: PopupImageMenuItem.ConstructorProps): void;
 
+    readonly label: St.Label;
     setIcon(icon: Gio.Icon | string): void;
 }
 

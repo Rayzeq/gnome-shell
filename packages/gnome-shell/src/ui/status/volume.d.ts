@@ -90,7 +90,7 @@ export declare class OutputStreamSlider extends StreamSlider {
  * InputStreamSlider class for controlling input audio stream.
  */
 export declare class InputStreamSlider extends StreamSlider {
-    // Implementation-specific methods and properties
+    protected _maybeShowInput(): void;
 }
 
 /**
