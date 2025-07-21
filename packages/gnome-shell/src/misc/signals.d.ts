@@ -27,6 +27,17 @@ type SignalMap<K> = {
  * ```
  */
 export interface SignalMethods<S extends SignalMap<S> = any> {
+    // See https://gitlab.gnome.org/GNOME/gjs/-/blob/master/modules/core/_signals.js
+    _signalConnections?: {
+        [id: number]: {
+            name: keyof S;
+            callback: (...args: any[]) => boolean | undefined;
+            after: boolean;
+        }
+    };
+    _signalConnectionsByName?: Partial<Record<keyof S, number[]>>;
+    _nextConnectionId?: number;
+
     /**
      * Connects a callback to a signal for an object. Pass the returned ID to
      * `disconnect()` to remove the handler.
