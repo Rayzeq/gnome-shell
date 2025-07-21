@@ -160,6 +160,17 @@
       }
     },
     "./misc/permissionStore/ambient": "./dist/misc/permissionStore-ambient.d.ts",
+    "./misc/signalTracker": {
+      "import": {
+        "types": "./dist/misc/signalTracker.d.ts",
+        "default": "./dist/misc/signalTracker.js"
+      },
+      "require": {
+        "types": "./dist/misc/signalTracker.d.ts",
+        "default": "./dist/misc/signalTracker.cjs"
+      }
+    },
+    "./misc/signalTracker/ambient": "./dist/misc/signalTracker-ambient.d.ts",
     "./misc/signals": {
       "import": {
         "types": "./dist/misc/signals.d.ts",

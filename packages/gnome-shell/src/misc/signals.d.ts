@@ -2,6 +2,8 @@
 // Credits https://github.com/swsnr/gnome-shell-extension-picture-of-the-day/blob/main/%40types/gnome-shell/misc/signals.d.ts
 // TODO Move this SignalMethods to ts-for-gir / @girs/gjs
 
+import type * as SignalTracker from '../misc/signalTracker.js';
+
 type SignalMap<K> = {
     [Signal in keyof K]: unknown[];
 };
@@ -86,9 +88,9 @@ export interface EventEmitter<S extends SignalMap<S> = any> extends SignalMethod
  * @version 47
  */
 export class EventEmitter<S extends SignalMap<S> = any> {
-    connectObject(...args: any[]): number; // TODO: return type is return type of imports.misc.signalTracker.connectObject
+    connectObject(...args: any[]): ReturnType<typeof SignalTracker.connectObject>;
 
-    disconnectObject(...args: any[]): number; // TODO: return type is return type of imports.misc.signalTracker.disconnectObject
+    disconnectObject(...args: any[]): ReturnType<typeof SignalTracker.disconnectObject>;
 
     connect_object(...args: any[]): ReturnType<typeof this.connectObject>;
 

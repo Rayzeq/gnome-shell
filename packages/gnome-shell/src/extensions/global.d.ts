@@ -1,5 +1,8 @@
 import type Shell from '@girs/shell-16';
 import type Clutter from '@girs/clutter-16';
+
+import type * as SignalTracker from '../misc/signalTracker.js';
+
 declare global {
     /**
      * Global shell object created by GNOME Shell on startup.
@@ -135,6 +138,19 @@ declare module '@girs/clutter-16/clutter-16' {
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L286
              */
             ease(props: EasingParamsWithProperties): void;
+        }
+    }
+}
+
+declare module '@girs/gobject-2.0/gobject-2.0' {
+    export namespace GObject {
+        interface Object {
+            connect_object(...args: any[]): ReturnType<typeof SignalTracker.connectObject>;
+            disconnect_object(obj: object): ReturnType<typeof SignalTracker.disconnectObject>;
+
+            connectObject(...args: any[]): ReturnType<typeof SignalTracker.connectObject>;
+            disconnectObject(obj: object): ReturnType<typeof SignalTracker.disconnectObject>;
+
         }
     }
 }
