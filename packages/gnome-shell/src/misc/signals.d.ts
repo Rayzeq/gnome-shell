@@ -2,6 +2,8 @@
 // Credits https://github.com/swsnr/gnome-shell-extension-picture-of-the-day/blob/main/%40types/gnome-shell/misc/signals.d.ts
 // TODO Move this SignalMethods to ts-for-gir / @girs/gjs
 
+import type * as SignalTracker from '../misc/signalTracker.js';
+
 type SignalMap<K> = {
     [Signal in keyof K]: unknown[];
 };
@@ -98,7 +100,7 @@ export class EventEmitter<S extends SignalMap<S> = any> {
      * with an optional flags value, followed by an object to track
      * @returns
      */
-    connectObject(...args: any[]): void;
+    connectObject(...args: any[]): ReturnType<typeof SignalTracker.connectObject>;
 
     /**
      * Disconnect all signals that were connected for
@@ -107,7 +109,7 @@ export class EventEmitter<S extends SignalMap<S> = any> {
      * @param obj - the tracked object
      * @returns
      */
-    disconnectObject(obj: object): void;
+    disconnectObject(obj: object): ReturnType<typeof SignalTracker.disconnectObject>;
 
     /**
      * Connect one or more signals, and associate the handlers
@@ -121,7 +123,7 @@ export class EventEmitter<S extends SignalMap<S> = any> {
      * with an optional flags value, followed by an object to track
      * @returns
      */
-    connect_object(...args: any[]): void;
+    connect_object(...args: any[]): ReturnType<typeof this.connectObject>;
 
     /**
      * Disconnect all signals that were connected for
@@ -130,5 +132,5 @@ export class EventEmitter<S extends SignalMap<S> = any> {
      * @param obj - the tracked object
      * @returns
      */
-    disconnect_object(obj: object): void;
+    disconnect_object(obj: object): ReturnType<typeof this.disconnectObject>;
 }

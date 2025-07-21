@@ -2,6 +2,8 @@ import type Shell from '@girs/shell-18';
 import type Clutter from '@girs/clutter-18';
 import type Cogl from '@girs/cogl-18';
 
+import type * as SignalTracker from '../misc/signalTracker.js';
+
 declare module '@girs/cairo-1.0/cairo-1.0' {
     export namespace cairo {
         interface Context {
@@ -237,6 +239,19 @@ declare module '@girs/clutter-18/clutter-18' {
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L71
              */
             ease_property<T = unknown>(propName: string, target: T, props: EasingParams): void;
+        }
+    }
+}
+
+declare module '@girs/gobject-2.0/gobject-2.0' {
+    export namespace GObject {
+        interface Object {
+            connect_object(...args: any[]): ReturnType<typeof SignalTracker.connectObject>;
+            disconnect_object(obj: object): ReturnType<typeof SignalTracker.disconnectObject>;
+
+            connectObject(...args: any[]): ReturnType<typeof SignalTracker.connectObject>;
+            disconnectObject(obj: object): ReturnType<typeof SignalTracker.disconnectObject>;
+
         }
     }
 }

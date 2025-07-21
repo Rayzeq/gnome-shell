@@ -84,7 +84,7 @@ declare class SignalTracker {
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/main/js/misc/signalTracker.js#L209
  * @version 50
  */
-export function connectObject(thisObj: object, ...args: any): void;
+export function connectObject(thisObj: object, ...args: any[]): void;
 
 /**
  * Disconnect all signals that were connected for
