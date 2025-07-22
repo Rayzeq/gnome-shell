@@ -123,6 +123,11 @@ interface EasingParams {
     onStopped?: (isFinished: boolean) => void;
 }
 
+/**
+ * @version 48
+ */
+interface PropertyEasingParams extends EasingParams, Partial<Clutter.PropertyTransition.ConstructorProps> {}
+
 /**  Any number of extra fields for the properties to be animated (e.g. "opacity: 0").
  *
  * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L133
@@ -238,7 +243,7 @@ declare module '@girs/clutter-18/clutter-18' {
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L289
              * @see https://gitlab.gnome.org/GNOME/gnome-shell/-/blob/54bc3aa4f54cb5452c29f81fada808224a18afa1/js/ui/environment.js#L71
              */
-            ease_property<T = unknown>(propName: string, target: T, props: EasingParams): void;
+            ease_property<T = unknown>(propName: string, target: T, props: PropertyEasingParams): void;
         }
     }
 }
