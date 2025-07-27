@@ -268,6 +268,8 @@ export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> ext
     constructor(sourceActor: St.Widget, arrowAlignment: number, arrowSide: St.Side);
 
     override actor: BoxPointer.BoxPointer;
+    _arrowAlignment: number;
+    _arrowSide: St.Side;
     _boxPointer: BoxPointer.BoxPointer;
 
     setArrowOrigin(origin: number): void;
