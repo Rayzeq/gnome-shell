@@ -293,6 +293,8 @@ export namespace PopupMenu {
  */
 export class PopupMenu<S extends Signals.SignalMap<S> = PopupMenu.SignalMap> extends PopupMenuBase<S> {
     override readonly actor: BoxPointer.BoxPointer;
+    _arrowAlignment: number;
+    _arrowSide: St.Side;
     _boxPointer: BoxPointer.BoxPointer;
 
     constructor(sourceActor: Clutter.Actor, arrowAlignment: number, arrowSide: St.Side);
