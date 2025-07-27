@@ -29,18 +29,19 @@ interface ExtensionMetadata extends Record<string, any> {
  * @version 46
  */
 export interface ExtensionObject {
-    readonly metadata: ExtensionMetadata;
-    readonly uuid: string;
-    readonly type: ExtensionType;
-    readonly dir: Gio.File;
-    readonly path: string | null;
-    readonly error: string;
-    readonly hasPrefs: boolean;
-    readonly hasUpdate: boolean;
-    readonly canChange: boolean;
-    readonly sessionModes: readonly string[];
-    readonly state?: ExtensionState;
-    readonly stateObj?: Extension;
+    metadata: ExtensionMetadata;
+    uuid: string;
+    type: ExtensionType;
+    dir: Gio.File;
+    path: string | null;
+    error: string;
+    hasPrefs: boolean;
+    enabled: boolean;
+    hasUpdate: boolean;
+    canChange: boolean;
+    sessionModes: readonly string[];
+    state?: ExtensionState;
+    stateObj?: Extension;
 }
 
 /**
