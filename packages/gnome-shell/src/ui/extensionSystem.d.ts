@@ -36,7 +36,7 @@ export class ExtensionManager<S extends Signals.SignalMap<S> = ExtensionManager.
 
     get updatesSupported(): boolean;
 
-    lookup(uuid: string): ExtensionObject;
+    lookup(uuid: string): ExtensionObject | undefined;
 
     getUuids(): readonly string[];
 
