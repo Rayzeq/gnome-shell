@@ -234,7 +234,7 @@ export namespace PopupMenuBase {
     // PopupMenuBase.addMenuItem explicitly checks for any of these specific types
     type MenuItemType = PopupMenuSection | PopupSubMenuMenuItem | PopupSeparatorMenuItem | PopupBaseMenuItem;
 
-    type AnimationParams = { animate: boolean; fadeOnly: boolean };
+    type AnimationParams = { animate?: boolean; fadeOnly?: boolean };
 }
 
 /**
